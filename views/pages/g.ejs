@@ -43,6 +43,34 @@
                <input type="submit" id="submit" value="Submit Request">
             </div>
          </div>
+         <% if (dataRequested) {%>
+         <% if (notFound) { %>
+               <div class="grid">
+                  No data found
+               </div>
+           <% } else { %>
+            <h1>User Information</h1>
+               <div class="">
+                  <label for="first-name">First name</label>
+                  <h2><%= firstname %></h2>
+               </div>
+               <div class="form-group">
+                  <label for="las">last name</label>
+                  <h2><%= lastname %></h2>
+               </div>
+               <div class="form-group">
+                  <label for="las">date of birth</label>
+                  <h2><%= dob %></h2>
+               </div>
+               <div class="form-group">
+                  <label for="las">age</label>
+                  <h2><%= age %></h2>
+               </div>
+               <button class="btn btn-primary text-dark">
+                  <a href="http://localhost:3000/g2?edit=true&license=<%= license.toString() %>">Update</a>
+               </button>
+           <% } %>
+            <%}%>
       </div>
       </form>
       <script src="script.js" async defer></script>
